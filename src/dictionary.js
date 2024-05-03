@@ -16,14 +16,15 @@ const XDictionary = () => {
     );
 
     if (foundWord) {
-      setSearchResult(foundWord.meaning);
+      setSearchResult(`Definition: ${foundWord.meaning}`);
     } else {
-      setSearchResult('Word not found in the dictionary.');
+      setSearchResult('Definition: Word not found in the dictionary.');
     }
   };
 
   return (
     <div>
+      <h1>Dictionary App</h1>
       <input
         type="text"
         value={searchTerm}
@@ -31,7 +32,7 @@ const XDictionary = () => {
         placeholder="Enter search term"
       />
       <button onClick={handleSearch}>Search</button>
-      {searchResult && <p>{searchResult}</p>}
+      <p>{searchResult}</p>
     </div>
   );
 };
