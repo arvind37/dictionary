@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const XDictionary = () => {
-  const initialDictionary = [
-    { word: "React", meaning: "A JavaScript library for building user interfaces." },
-    { word: "Component", meaning: "A reusable building block in React." },
-    { word: "State", meaning: "An object that stores data for a component." }
-  ];
+const initialDictionary = [
+  { word: "React", meaning: "A JavaScript library for building user interfaces." },
+  { word: "Component", meaning: "A reusable building block in React." },
+  { word: "State", meaning: "An object that stores data for a component." }
+];
 
+const XDictionary = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState('');
 
@@ -16,9 +16,9 @@ const XDictionary = () => {
     );
 
     if (foundWord) {
-      setSearchResult(`Definition: ${foundWord.meaning}`);
+      setSearchResult(foundWord.meaning);
     } else {
-      setSearchResult('Definition: Word not found in the dictionary.');
+      setSearchResult('Word not found in the dictionary.');
     }
   };
 
@@ -32,7 +32,7 @@ const XDictionary = () => {
         placeholder="Enter search term"
       />
       <button onClick={handleSearch}>Search</button>
-      <p>{searchResult}</p>
+      <p>Definition: {searchResult}</p>
     </div>
   );
 };
